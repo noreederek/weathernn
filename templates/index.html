@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>WeatherNN - Test Case</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<link rel="stylesheet" href="static/assets/css/jquery-ui.css" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">WeatherNN</a></h1>
+						<nav class="main">
+							<ul>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="/">
+											<h3>Домой</h3>
+											<p>Главная страница</p>
+										</a>
+									</li>
+									<li>
+										<a href="/faq">
+											<h3>FAQ</h3>
+											<p>Описание сервиса</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a>{{ weather.city if weather else "Нижний Новгород"}}</a></h2>
+										<p>Осадки - {{ weather.precip if weather else "-"}} ММ; Давление - {{ weather.pressure if weather else "-"}} мБар</p>
+									</div>
+									<div class="meta">
+										<h2>{{ weather.temperature if weather else "-"}} &#8451;</h2>
+										<a class="author"><span class="name">{{ weather.weather_descriptions if weather else "-"}}</span><img src={{ weather.icon if weather else "static/images/logo.png"}} alt="" /></a>
+									</div>
+								</header>
+								<ul class="posts">
+									<li>
+										<article>
+											{% if (weather.clothes == "minus15") %}
+											<header>
+												<h2><a>Рекомендуем надеть</a></h2>
+												<p>Теплая куртка, пуховик, пальто и т.п. Необходима теплая одежда для защиты от холода. Также нужны варежки или перчатки.</p>
+											</header>
+											<a class="image"><img src="static/images/minus15.png" alt="" /></a>
+											{% elif (weather.clothes == "minus0") %}
+											<header>
+												<h2><a>Рекомендуем надеть</a></h2>
+												<p>Пуховик, пальто и т.п. Необходима теплая одежда для защиты от холода. Не забудьте про шапку. Также нужны варежки или перчатки.</p>
+											</header>
+											<a class="image"><img src="static/images/minus0.png" alt="" /></a>
+											{% elif (weather.clothes == "plus10") %}
+											<header>
+												<h2><a>Рекомендуем надеть</a></h2>
+												<p>Куртка, легкое пальто, теплый свитер и т. п. Желательно иметь легкий жакет или кардиган.</p>
+											</header>
+											<a class="image"><img src="static/images/plus10.png" alt="" /></a>
+											{% elif (weather.clothes == "plus20") %}
+											<header>
+												<h2><a>Рекомендуем надеть</a></h2>
+												<p>Рубашка с длинным рукавом и т. п. В зависимости от погоды достаточно рубашки с коротким рукавом</p>
+											</header>
+											<a class="image"><img src="static/images/plus20.png" alt="" /></a>
+											{% elif (weather.clothes == "plus50") %}
+											<header>
+												<h2><a>Рекомендуем надеть</a></h2>
+												<p>Рубашка с коротким рукавом, шорты и т.п.</p>
+											</header>
+											<a class="image"><img src="static/images/plus50.png" alt="" /></a>
+											{% else %}
+											<header>
+												<h2><a>Рекомендуем надеть</a></h2>
+												<p>Непонятная погодка. Жакет, свитер и т. п.В зависимости от погоды может потребоваться пальто.</p>
+											</header>
+											<a class="image"><img src="static/images/else.png" alt="" /></a>
+											{% endif %}
+										</article>
+									</li>
+									</ul>
+								</article>
+
+					</div>
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+								<a href="#" class="logo"><img src="static/images/logo.png" alt="" /></a>
+								<header>
+									<h2>WeatherNN</h2>
+									<p>Одевайся по погоде в Нижнем Новгороде и не только</p>
+								</header>
+								<button id="myloc" class="button fit small icon solid fa-map-marker"> Погода здесь</button>
+							</br>
+						</br>
+									<form method="post" action="{{ url_for('index') }}">
+										<div class="row gtr-uniform">
+											<div class="col-12 col-12-xsmall">
+												<input type="text" name="city" id="city" value="" placeholder="Введите город" />
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input id="check" type="submit" value="Проверить" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+							</section>
+
+						<!-- Footer -->
+							<section id="footer">
+								<p class="copyright" id="status"></p>
+								<p class="copyright">&copy; by Mayorov Yuri for CTOSchool.</p>
+							</section>
+
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+			<script src="static/assets/js/jquery-ui.js"></script>
+  			<script src="static/assets/js/autocomplete.js"></script>
+			<script>
+				function geoFindMe() {
+								
+				const inp_field = $("#city");
+				const mapLink = $("#check");
+				const status = $("#status");
+								
+				function success(position) {
+				  const latitude  = position.coords.latitude;
+				  const longitude = position.coords.longitude;
+				
+				  inp_field.val(latitude + "," + longitude);
+				  mapLink.click();
+				}
+				
+				function error() {
+				  status.textContent = 'Не получилось определить ваше местоположение';
+				}
+				
+				if (!navigator.geolocation) {
+				  status.textContent = 'Geolocation API не поддерживается';
+				} else {
+				  status.textContent = 'Geolocation API поддерживается';
+				  navigator.geolocation.getCurrentPosition(success, error);
+				}
+				
+				}
+
+				document.querySelector('#myloc').addEventListener('click', geoFindMe);
+			</script>
+	</body>
+</html>
