@@ -1,6 +1,6 @@
 # WeatherNN
 
-[![WeatherNN](https://i.ibb.co/py9dKJ7/logo.png)]
+![WeatherNN](https://i.ibb.co/py9dKJ7/logo.png)
 
 Тестовое задание для Future CTO School.
 
