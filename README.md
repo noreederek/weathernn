@@ -1,6 +1,6 @@
-# [WeatherNN](https://weathernn.eu.ngrok.io/)
+# WeatherNN
 
-[![WeatherNN](https://i.ibb.co/py9dKJ7/logo.png)](https://weathernn.eu.ngrok.io)
+[![WeatherNN](https://i.ibb.co/py9dKJ7/logo.png)]
 
 Тестовое задание для Future CTO School.
 
@@ -16,9 +16,8 @@
   - Формат ответа: данные о температуре, влажности, давлении, погодных условиях и др. c API - текстовый шаблон. Изображение описывающее погоду с API - ссылка на изображение. Рекомендации о предпочтительной одежде после обсчета данных с API - картинка и текст. Автозаполнение в поле ввода - текст.
  
 # Демо работы сервиса
-Ссылка на демо: https://weathernn.eu.ngrok.io/
 
-Ссылка на видео: https://yadi.sk/i/YkZDGZX6eenRlw (Простите, что без голоса - не хочу будить окружающих)), я думаю все можно увидеть в рабочей демо) 
+Ссылка на видео: https://yadi.sk/i/YkZDGZX6eenRlw
 
 ![](Weathernn.gif)
 # Процесс работы программы по шагам
