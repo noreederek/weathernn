@@ -2,7 +2,7 @@
 
 ![WeatherNN](https://i.ibb.co/py9dKJ7/logo.png)
 
-Тестовое задание для Future CTO School.
+Тестовое задание для Школы Будущих СТО by Yandex
 
   - Умный сервис прогноза погоды
   - Сложность: задача со звездочкой
@@ -58,7 +58,7 @@ License
 ----
 MIT
 
-**By Mayorov Yuri for Future CTO School**
+**By Mayorov Yuri for "Yandex Школа Будущих СТО (Chief Technical Officer)"**
 
 `Desktop`
 
